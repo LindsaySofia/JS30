@@ -10,12 +10,12 @@ body {
   align-items: center;
 }
 
-.input-container {
+.location-container {
   position: absolute;
   top: 100px;
 }
 
-.city-state {
+.location {
   height: 75px;
   width: 400px;
   font-size: 3em;
@@ -26,10 +26,13 @@ body {
   color: gray;
 }
 
-.city-state:focus {
+.location:focus {
   outline: none;
 }
 
 .box {
-  
+  height: 300px;
+  width: 300px;
+  background-color: yellow;
+
 }
