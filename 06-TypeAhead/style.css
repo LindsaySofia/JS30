@@ -10,12 +10,12 @@ body {
   align-items: center;
 }
 
-.location-container {
+.search-form {
   margin-top: 75px;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
-.location {
+.search {
   height: 75px;
   width: 500px;
   font-size: 3em;
@@ -26,7 +26,7 @@ body {
   color: gray;
 }
 
-.location:focus {
+.search:focus {
   outline: none;
 }
 
@@ -45,13 +45,14 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  transform: rotateX(30deg);
 }
 
 .result:nth-child(odd) {
-  transform: rotateX(0);
+  /* transform-origin: top;
+  transform: rotateX(-45deg); */
 }
 
 .result:nth-child(even) {
-  transform: rotateX(45deg);
+  /* transform-origin:bottom;
+  transform: rotateX(45deg); */
 }
