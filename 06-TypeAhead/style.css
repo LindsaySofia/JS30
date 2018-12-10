@@ -3,21 +3,21 @@ body {
   min-width: 100vw;
   padding: 0;
   margin: 0;
+  font-family: sans-serif;
   background-color: rgb(0, 0, 128);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
 }
 
 .location-container {
-  position: absolute;
-  top: 100px;
+  margin-top: 75px;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 .location {
   height: 75px;
-  width: 400px;
+  width: 500px;
   font-size: 3em;
   text-align: center;
   font-weight: 300;
@@ -30,9 +30,28 @@ body {
   outline: none;
 }
 
-.box {
-  height: 300px;
-  width: 300px;
-  background-color: yellow;
+.result-container {
+  width: 450px;
+}
 
+.result {
+  padding: 5px;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(245, 245, 240);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1.25em;
+  color: gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  transform: rotateX(30deg);
+}
+
+.result:nth-child(odd) {
+  transform: rotateX(0);
+}
+
+.result:nth-child(even) {
+  transform: rotateX(45deg);
 }
