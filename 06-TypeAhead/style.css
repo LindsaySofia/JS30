@@ -50,9 +50,17 @@ body {
 }
 
 .result:nth-child(odd) {
-  transform: skewX(2deg);
+  transform: skewX(5deg);
 }
 
 .result:nth-child(even) {
-  transform: skewX(-2deg);
+  transform: skewX(-5deg);
+}
+
+.name {
+  text-transform: capitalize;
+}
+
+.highlight {
+  background-color: rgb(221, 204, 255);
 }
