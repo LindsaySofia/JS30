@@ -43,6 +43,7 @@
     const id823423Index = comments.findIndex(comment => comment.id === 823423);
     // delete the comment with the ID of 823423
     comments.splice(id823423, 1);
+    // [...comments.slice(0, index), ...comments.slice(index + 1)] -> create a new array without the comment
 
   </script>
 </body>
