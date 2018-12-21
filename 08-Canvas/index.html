@@ -8,20 +8,59 @@
         margin: 0;
         padding: 0;
       }
-
-      canvas {
-        min-width: 100vw;
-        min-height: 100vh;
-      }
     </style>
   </head>
   <body>
     <canvas id="myCanvas"></canvas>
     <script>
       const canvas = document.getElementById('myCanvas');
+      // Drawing happens on context
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      // strokeStyle = color 
+      ctx.strokeStyle = '#BADA55';
+      // when line meets a line
+      ctx.lineJoin = 'round';
+      ctx.lineCap = 'round';
+      ctx.lineWidth = '100';
+
+      // Only want to draw when cursor is down
+      let isDrawing = false;
+      let lastX = 0;
+      let lastY = 0;
+      let hue = 0;
+      // Building up
+      let direction = true;
+
+      function draw(e) {
+        if (!isDrawing) return; // Stops function from running when not mousedown
+        ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+        ctx.beginPath();
+        // Start from
+        ctx.moveTo(lastX, lastY);
+        // Go to
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+        // [lastX, lastY] = [e.offsetX, e.offsetY] => 'destructuring' an array
+        lastX = e.offsetX;
+        lastY = e.offsetY;
+        // Changes our stroke color
+        hue++;
+        hue = (hue >= 360) ? 0 : hue;
+        // Changes our stroke width
+        if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+          direction = !direction;
+        }
+        ctx.lineWidth = (direction) ? ctx.lineWidth + 1 : ctx.lineWidth - 1;
+      }
+      canvas.addEventListener('mousemove', draw);
       canvas.addEventListener('mousedown', (e) => {
-        console.log(e.clientX, e.clientY);      
-      });
+        isDrawing = true;
+        [lastX, lastY] = [e.offsetX, e.offsetY];
+        });
+      canvas.addEventListener('mouseup', () => isDrawing = false);
+      canvas.addEventListener('mouseout', () => isDrawing = false);
     </script>
   </body>
 </html>
