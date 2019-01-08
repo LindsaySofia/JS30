@@ -16,21 +16,25 @@ body {
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 10px;
+  justify-content: space-around;
 }
 
 li {
   list-style: none;
   display: grid;
   grid-template-columns: 20% 80%;
+  height: 100%;
+  width: 100%;
+  border-bottom: 5px solid gray;
+  align-content: center;
 }
 
-.list-check {
+.list-check, .list-item {
   height: 100%;
   width: 100%;
 }
 
 input[type=checkbox]:checked + label {
   text-decoration: line-through;
+  background-color: gray;
 }
