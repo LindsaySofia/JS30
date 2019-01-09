@@ -46,11 +46,13 @@
     let shiftDown = false;
     const inputList = document.querySelectorAll('.list-check');
     const inputListArray = [...inputList];
-    // Whenever a click event happens, reset the last checked. If undefined, we want to default to the first item in our list.
     document.querySelector('.list').addEventListener('click', (e) => {
+      // If shift down and we clicked on a box
       if (shiftDown && e.target.id) {
-        inputListArray.slice(lastChecked, e.target.id).forEach(input => input.checked = true);
+        let inputListSlice = (inputListArray.slice(lastChecked, e.target.id).length === 0) ? inputListArray.slice(e.target.id, lastChecked) : inputListArray.slice(lastChecked, e.target.id);
+        inputListSlice.forEach(input => input.checked = true);
       }
+      // Whenever a click event happens, reset the last checked. If undefined, we want to default to the first item in our list.
       lastChecked = e.target.id || defaultChecked;
 
     });
