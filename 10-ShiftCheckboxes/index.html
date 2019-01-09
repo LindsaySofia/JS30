@@ -43,26 +43,17 @@
   <script>
     let defaultChecked = 0;
     let lastChecked = defaultChecked;
-    let shiftDown = false;
     const inputList = document.querySelectorAll('.list-check');
     const inputListArray = [...inputList];
     document.querySelector('.list').addEventListener('click', (e) => {
       // If shift down and we clicked on a box
-      if (shiftDown && e.target.id) {
+      if (e.shiftKey && e.target.id) {
         let inputListSlice = (inputListArray.slice(lastChecked, e.target.id).length === 0) ? inputListArray.slice(e.target.id, lastChecked) : inputListArray.slice(lastChecked, e.target.id);
         inputListSlice.forEach(input => input.checked = true);
       }
       // Whenever a click event happens, reset the last checked. If undefined, we want to default to the first item in our list.
       lastChecked = e.target.id || defaultChecked;
 
-    });
-    document.querySelector('.list').addEventListener('keydown', (e) => {
-      // If we're holding shift down then we want shiftDown to be set to true.
-      shiftDown = (e.which === 16) ? true : false;
-    });
-    document.querySelector('.list').addEventListener('keyup', (e) => {
-      // If we've released shift then set shiftDown to false, otherwise leave it as it was
-      shiftDown = (e.which === 16) ? false : shiftDown;
     });
   </script>
 </body>
