@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(#00BCD4, #ffffff, #4CAF50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+video {
+  box-shadow: 0 0 9px 5px black;
+}
