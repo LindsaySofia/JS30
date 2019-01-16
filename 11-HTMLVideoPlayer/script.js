@@ -14,6 +14,7 @@ document.querySelector('.video-box').addEventListener('mouseout', (e) => {
 document.querySelector('.play').addEventListener('click', toggleVideo);
 document.querySelector('.volume').addEventListener('input', handleVolume);
 document.querySelector('.playback').addEventListener('input', handlePlayBack);
+document.querySelector('.controls').addEventListener('click', handleTime);
 
 
 // Functions
@@ -32,4 +33,12 @@ function handleVolume(event) {
 
 function handlePlayBack(event) {
   video.playbackRate = event.target.value;
+}
+
+function handleTime(event) {
+  if (event.target.value === '10') {
+    video.currentTime = `${+video.currentTime - 10}`;
+  } else {
+    video.currentTime = `${+video.currentTime + 25}`;
+  }
 }
