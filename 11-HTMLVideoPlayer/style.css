@@ -12,10 +12,24 @@ video {
   box-shadow: 0 0 9px 0px black;
 }
 
+.video-box {
+  position: relative;
+  overflow: hidden;
+}
+
 .controls {
+  position: absolute;
+  bottom: 0;
   background-color: black;
   width: 100%;
   height: 50px;
+  transform: translateY(40px);
+}
+
+.controls-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .progress {
@@ -39,4 +53,10 @@ input, button {
   border: none; 
   background-color: inherit;
   color: white;
+  outline: none;
 } 
+
+.hover {
+  transform: translateY(0px); 
+  transition: transform 300ms;
+}
