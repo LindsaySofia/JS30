@@ -12,6 +12,7 @@ document.querySelector('.video-box').addEventListener('mouseout', (e) => {
 
 // Event Listeners
 document.querySelector('.play').addEventListener('click', toggleVideo);
+document.querySelector('.volume').addEventListener('input', handleVolume);
 
 
 // Functions
@@ -22,4 +23,8 @@ function toggleVideo(event) {
     video.play();
   }
   playVideo = !playVideo;
+}
+
+function handleVolume(event) {
+  video.volume = event.target.value;
 }
