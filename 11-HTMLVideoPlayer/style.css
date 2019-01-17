@@ -30,13 +30,13 @@ body {
 }
 
 .progress {
-  display: block;
+  display: flex;
   height: 33%;
 }
 
 .progress-filled {
-  height: 100%;
-  width: 75px;
+  flex: 0;
+  flex-basis: 50%;
   background-color: yellow;
 }
 
