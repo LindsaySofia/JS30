@@ -1,6 +1,8 @@
 // Variables
 const video = document.querySelector('video');
+const progress = document.querySelector('.progress');
 const progressBar = document.querySelector('.progress-filled');
+let mouseDown = false;
 
 // Displays controls when we hover our mouse over the video
 document.querySelector('.video-box').addEventListener('mouseover', (e) => {
@@ -11,8 +13,12 @@ document.querySelector('.video-box').addEventListener('mouseout', (e) => {
 });
 
 // Event Listeners
-document.querySelector('video').addEventListener('click', togglePlay);
-document.querySelector('video').addEventListener('timeupdate', handleProgress);
+video.addEventListener('click', togglePlay);
+video.addEventListener('timeupdate', handleProgress);
+progress.addEventListener('click', scrub);
+progress.addEventListener('mousemove', (event) => mouseDown && scrub(event));
+progress.addEventListener('mousedown', () => mouseDown = true);
+progress.addEventListener('mouseup', () => mouseDown = false);
 document.querySelector('.play').addEventListener('click', togglePlay);
 document.querySelector('.volume').addEventListener('input', handleVolume);
 document.querySelector('.playback').addEventListener('input', handlePlayBack);
@@ -48,4 +54,10 @@ function handleProgress() {
   let percent = (video.currentTime / video.duration) * 100;
   progressBar.style.flexBasis = `${percent}%`;
   
+}
+
+function scrub(event) {
+  const scrubTime = (event.offsetX / progress.offsetWidth) * video.duration;
+  video.currentTime = scrubTime;
+
 }
