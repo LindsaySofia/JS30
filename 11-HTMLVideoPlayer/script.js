@@ -1,7 +1,6 @@
 // Variables
 const video = document.querySelector('video');
 const duration = video.duration;
-let playVideo = false;
 
 // Displays controls when we hover our mouse over the video
 document.querySelector('.video-box').addEventListener('mouseover', (e) => {
@@ -12,20 +11,19 @@ document.querySelector('.video-box').addEventListener('mouseout', (e) => {
 });
 
 // Event Listeners
-document.querySelector('video').addEventListener('click', toggleVideo);
+document.querySelector('video').addEventListener('click', togglePlay);
 document.querySelector('.volume').addEventListener('input', handleVolume);
 document.querySelector('.playback').addEventListener('input', handlePlayBack);
 document.querySelector('.controls').addEventListener('click', handleTime);
 
 
 // Functions
-function toggleVideo(event) {
-  if (playVideo) {
-    video.pause();
-  } else {
+function togglePlay(event) {
+  if (video.paused) {
     video.play();
+  } else {
+    video.pause();
   }
-  playVideo = !playVideo;
 }
 
 function handleVolume(event) {
