@@ -1,17 +1,32 @@
 body {
   font-family: sans-serif;
   font-weight: 300;
-  font-size: 18px;
-  background-color: rgb(29, 0, 81);
+  font-size: 20px;
+  background-color: rgb(52, 219, 177);
+  width: 100%;
 }
 
 .site-wrap {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   padding: 5%;
   width: 80%;
+  text-align: justify;
   margin: 0 auto;
 }
 
 h1 {
   text-align: center;
+}
+
+.slide-in {
+  height: 400px;
+  margin: 10px;
+}
+
+.align-left {
+  float: left;
+}
+
+.align-right {
+  float: right;
 }
