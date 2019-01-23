@@ -58,8 +58,29 @@
           if (callNow) func.apply(context, args);
         };
       }
+
+      const sliderImages = document.querySelectorAll('.slide-in');
+
+      function checkSlide(event) {
+        sliderImages.forEach(sliderImage => {
+          // Pixel level of when each image should slide in at (halfway through image).
+          const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+          // Bottom of image
+          const imageBottom = sliderImage.offsetTop + sliderImage.height;
+
+          const isHalfShown = slideInAt > sliderImage.offsetTop;
+          const isNotScrolledPast = window.scrollY < imageBottom;
+          if (isHalfShown && isNotScrolledPast) {
+            sliderImage.classList.add('active');
+          } else {
+            sliderImage.classList.remove('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', debounce(checkSlide));
   
     </script>
-    
+
   </body>
 </html>
