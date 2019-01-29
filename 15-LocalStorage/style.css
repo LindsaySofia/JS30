@@ -1,6 +1,7 @@
 body {
   min-height: 100vh;
   min-width: 100vw;
+  /* Photo by Jason Leung on Unsplash */
   background-image: url('background.jpg');
   background-repeat: no-repeat;
   background-position: center;
