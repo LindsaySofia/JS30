@@ -1,3 +1,8 @@
+*, *::before, ::after {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   min-height: 100vh;
   min-width: 100vw;
@@ -6,4 +11,28 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  position: relative;
+}
+
+.wrapper {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow:0 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  position: relative;
+  left: 50%;
+}
+
+h2 {
+  text-align: center;
+}
+
+.plates {
+}
+
+li {
+  list-style: none;
+  border-bottom: 2px solid darkgray;
+}
+
+.add-items {
 }
