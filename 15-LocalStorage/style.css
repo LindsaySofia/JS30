@@ -39,9 +39,8 @@ h2 {
   padding: 15px;
 }
 
-.plates label {
-  flex: 1;
-  cursor: pointer;
+.plates input {
+  display: none;
 }
 
 .plates input + label:before {
@@ -61,5 +60,5 @@ h2 {
 .add-items input {
   border: none;
   height: 35px;
-  outline: 0;
+  out line: 0;
   padding: 0px 15px;
