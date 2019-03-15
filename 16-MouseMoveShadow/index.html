@@ -20,10 +20,13 @@
       let pink = document.querySelector('.pink');
 
       input.addEventListener('input', resizeInput);
-      input.addEventListener('mousemove', moveText);
+      body.addEventListener('mousemove', moveText);
 
-      function moveText() {
-        console.log(body.clientX, body.clientY);
+      function moveText(e) {
+        let x = e.clientX;
+        let y = e.clientY;
+        purple.style.left = `${e.clientX + 100}px`;
+        purple.style.top = `${e.clientY + 100}px`;
       }
 
       resizeInput.call(input);
