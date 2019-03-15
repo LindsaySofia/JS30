@@ -7,13 +7,32 @@
   </head>
   <body>
     <input value="💕 Love you 💕" />
+    <div class="purple">💕 Love you 💕</div>
+    <div class="blue">💕 Love you 💕</div>
+    <div class="green">💕 Love you 💕</div>
+    <div class="pink">💕 Love you 💕</div>
     <script>
+      let body = document.body;
       let input = document.querySelector('input');
+      let purple = document.querySelector('.purple');
+      let blue = document.querySelector('.blue');
+      let green = document.querySelector('.green');
+      let pink = document.querySelector('.pink');
+
       input.addEventListener('input', resizeInput);
+      input.addEventListener('mousemove', moveText);
+
+      function moveText() {
+        console.log(body.clientX, body.clientY);
+      }
 
       resizeInput.call(input);
       function resizeInput() {
         this.style.width = this.value.length + 'ch';
+        purple.innerHTML = this.value;
+        blue.innerHTML = this.value;
+        green.innerHTML = this.value;
+        pink.innerHTML = this.value;
       }
     </script>
   </body>

@@ -6,10 +6,35 @@ body {
   justify-content: center;
 }
 
-input {
-  border: none;
+div, input {
   font-size: 7em;
   font-weight: bold;
-  text-align: center;
   text-transform: uppercase;
+}
+
+div {
+  position: absolute;
+}
+
+.purple {
+  color: #9e21ff;
+}
+
+.blue {
+  color: #20f3ff;
+}
+
+.green {
+  color: #20ff6a;
+}
+
+.pink {
+  color: #ff20bc;
+}
+
+
+
+input {
+  border: none;
+  text-align: center;
 }
