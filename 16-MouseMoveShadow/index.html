@@ -25,10 +25,8 @@
       function moveText(e) {
         let x = e.clientX;
         let y = e.clientY;
-        purple.style.left = `${window.innerWidth / 2}px`;
-        purple.style.top = `${window.innerHeight / 2}px`;
-        purple.style.marginTop = `-${input.height / 2}px`;
-        purple.style.marginLeft = `-${input.width / 2}px`;
+        purple.style.left = `${(window.innerWidth / 2) - x}px`;
+        purple.style.top = `${y}px`;
       }
 
       resizeInput.call(input);
