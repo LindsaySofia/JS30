@@ -1,36 +1,11 @@
-div, input {
-  font-size: 6em;
+input {
+  font-size: 6rem;
   font-weight: bold;
   text-transform: uppercase;
   position: absolute;
   font-family: sans-serif;
+  border: none;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-}
-
-.purple, .blue, .green, .pink {
-  opacity: 0.8;
-}
-
-.purple {
-  color: #9e21ff;
-}
-
-.blue {
-  color: #20f3ff;
-}
-
-.green {
-  color: #20ff6a;
-}
-
-.pink {
-  color: #ff20bc;
-}
-
-
-
-input {
-  border: none;
 }

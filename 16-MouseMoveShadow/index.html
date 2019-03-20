@@ -6,18 +6,10 @@
     <link type="text/css" rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <input value="💕 Love you 💕" />
-    <div class="purple"></div>
-    <div class="blue"></div>
-    <div class="green"></div>
-    <div class="pink"></div>
+    <input type="text" value="💕 Love you 💕" />
     <script>
       let body = document.body;
       let input = document.querySelector('input');
-      let purple = document.querySelector('.purple');
-      let blue = document.querySelector('.blue');
-      let green = document.querySelector('.green');
-      let pink = document.querySelector('.pink');
 
       input.addEventListener('input', resizeInput);
       body.addEventListener('mousemove', moveText);
@@ -30,10 +22,6 @@
       resizeInput.call(input);
       function resizeInput() {
         this.style.width = this.value.length + 'ch';
-        purple.innerHTML = this.value;
-        blue.innerHTML = this.value;
-        green.innerHTML = this.value;
-        pink.innerHTML = this.value;
       }
     </script>
   </body>
