@@ -1,11 +1,32 @@
-input {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input, div {
   font-size: 6rem;
   font-weight: bold;
   text-transform: uppercase;
   position: absolute;
   font-family: sans-serif;
   border: none;
+  
+}
+
+input {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  z-index: 2;
+  background: transparent;
+  max-width: 95%;
+  min-height: fit-content;
+}
+
+div {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: transparent;
+  text-shadow: 0 0 0 black;
 }
