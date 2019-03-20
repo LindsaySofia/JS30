@@ -1,19 +1,16 @@
-body {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 div, input {
-  font-size: 7em;
+  font-size: 6em;
   font-weight: bold;
   text-transform: uppercase;
+  position: absolute;
+  font-family: sans-serif;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-div {
-  position: absolute;
+.purple, .blue, .green, .pink {
+  opacity: 0.8;
 }
 
 .purple {
@@ -36,5 +33,4 @@ div {
 
 input {
   border: none;
-  text-align: center;
 }
