@@ -15,19 +15,18 @@
       input.addEventListener('input', resizeInput);
       window.addEventListener('mousemove', moveText);
 
+      function moveText(e) {
+        let x = e.clientX;
+        let y = e.clientY;
+        div.style.textShadow = `${x}px ${y}px 0 pink`;
+        div.style.transform = `translate(${10 - (x / 12)}%, ${50 - (y / 4)}%)`;
+      }
+
       resizeInput.call(input);
       function resizeInput() {
         this.style.width = this.value.length + 'ch';
         div.innerHTML = this.value;
-        
       }
-
-      function moveText(e) {
-        let x = e.clientX;
-        let y = e.clientY;
-      }
-
-      
     </script>
   </body>
 </html>

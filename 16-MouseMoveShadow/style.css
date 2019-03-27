@@ -23,9 +23,5 @@ input {
 }
 
 div {
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   color: transparent;
-  text-shadow: 0 0 0 black;
 }
