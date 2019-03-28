@@ -7,10 +7,14 @@
   </head>
   <body>
     <input type="text" value="💕 Love you 💕" />
-    <div></div>
+    <div class="text-shadow"></div>
     <script>
       let input = document.querySelector('input');
-      let div = document.querySelector('div');
+      let inputHeight = input.clientHeight;
+      let inputWidth = input.clientWidth;
+      let midX = window.innerWidth / 2;
+      let midY = window.innerHeight / 2;
+      let textShadow = document.querySelector('.text-shadow');
     
       input.addEventListener('input', resizeInput);
       window.addEventListener('mousemove', moveText);
@@ -18,14 +22,22 @@
       function moveText(e) {
         let x = e.clientX;
         let y = e.clientY;
-        div.style.textShadow = `${x}px ${y}px 0 pink`;
-        div.style.transform = `translate(${10 - (x / 12)}%, ${50 - (y / 4)}%)`;
+        let pinkX = (x + midX - inputWidth) / 2;
+        let pinkY = (y + midY - inputHeight) / 2;
+        // pink.style.textShadow = `${x}px ${y}px 0 pink`;
+        // pink.style.transform = `translate(${10 - (x / 12)}%, ${50 - (y / 4)}%)`;
+        // blue.style.textShadow = `${x}px ${y}px 0 blue`;
+        // blue.style.transform = `translate(${-50 - x}%, ${50 - (y / 4)}%)`;
+        textShadow.style.textShadow = `${pinkX}px ${pinkY}px 0 pink,
+        ${innerWidth - pinkX - inputWidth}px ${pinkY}px 0 blue`;
       }
 
       resizeInput.call(input);
       function resizeInput() {
         this.style.width = this.value.length + 'ch';
-        div.innerHTML = this.value;
+        inputHeight = this.clientHeight;
+        inputWidth = this.clientWidth;
+        textShadow.innerHTML = this.value;
       }
     </script>
   </body>
