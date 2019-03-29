@@ -12,6 +12,8 @@
       let input = document.querySelector('input');
       let inputHeight = input.clientHeight;
       let inputWidth = input.clientWidth;
+      let innerWidth = window.innerWidth;
+      let innerHeight = window.innerHeight;
       let midX = window.innerWidth / 2;
       let midY = window.innerHeight / 2;
       let textShadow = document.querySelector('.text-shadow');
@@ -28,8 +30,12 @@
         // pink.style.transform = `translate(${10 - (x / 12)}%, ${50 - (y / 4)}%)`;
         // blue.style.textShadow = `${x}px ${y}px 0 blue`;
         // blue.style.transform = `translate(${-50 - x}%, ${50 - (y / 4)}%)`;
-        textShadow.style.textShadow = `${pinkX}px ${pinkY}px 0 pink,
-        ${innerWidth - pinkX - inputWidth}px ${pinkY}px 0 blue`;
+        textShadow.style.textShadow = `
+        ${pinkX}px ${pinkY}px 0 pink,
+        ${innerWidth - pinkX - inputWidth}px ${pinkY}px 0 blue,
+        ${pinkY}px ${innerHeight - pinkX - inputHeight - 15}px 0 green,
+        ${innerWidth - pinkY - inputWidth}px ${pinkX}px 0 purple
+        `;
       }
 
       resizeInput.call(input);
