@@ -6,7 +6,7 @@
     <link type="text/css" rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <input type="text" value="💕 Love you 💕" />
+    <input type="text" value="💕LOVE YOU💕" />
     <div class="text-shadow"></div>
     <script>
       let input = document.querySelector('input');
@@ -17,30 +17,29 @@
       let midX = window.innerWidth / 2;
       let midY = window.innerHeight / 2;
       let textShadow = document.querySelector('.text-shadow');
-    
+
       input.addEventListener('input', resizeInput);
       window.addEventListener('mousemove', moveText);
+
 
       function moveText(e) {
         let x = e.clientX;
         let y = e.clientY;
         let pinkX = (x + midX - inputWidth) / 2;
         let pinkY = (y + midY - inputHeight) / 2;
-        // pink.style.textShadow = `${x}px ${y}px 0 pink`;
-        // pink.style.transform = `translate(${10 - (x / 12)}%, ${50 - (y / 4)}%)`;
-        // blue.style.textShadow = `${x}px ${y}px 0 blue`;
-        // blue.style.transform = `translate(${-50 - x}%, ${50 - (y / 4)}%)`;
+        let greenX = ((innerWidth/innerHeight) * y + midX - inputWidth) / 2;
+        let purpleY = ((innerHeight/innerWidth) * x + midY - inputHeight) / 2;
         textShadow.style.textShadow = `
-        ${pinkX}px ${pinkY}px 0 pink,
-        ${innerWidth - pinkX - inputWidth}px ${pinkY}px 0 blue,
-        ${pinkY}px ${innerHeight - pinkX - inputHeight - 15}px 0 green,
-        ${innerWidth - pinkY - inputWidth}px ${pinkX}px 0 purple
+        ${pinkX}px ${pinkY}px 0 rgba(249, 59, 211, 0.8),
+        ${innerWidth - pinkX - inputWidth}px ${pinkY}px 0 rgba(58, 207, 249, 0.8),
+        ${innerWidth - greenX - inputWidth}px ${purpleY}px 0 rgba(105, 38, 241, 0.8),
+        ${greenX}px ${innerHeight - purpleY - inputHeight}px 0 rgba(38, 242, 45, 0.8)
         `;
       }
 
       resizeInput.call(input);
       function resizeInput() {
-        this.style.width = this.value.length + 'ch';
+        this.style.width = this.value.length + 1 + 'ch';
         inputHeight = this.clientHeight;
         inputWidth = this.clientWidth;
         textShadow.innerHTML = this.value;
