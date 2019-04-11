@@ -30,7 +30,9 @@
         // when y = "midY", this centers the text (i.e. midY - inputWidth/2 )
         let pinkY = (y + midY - inputHeight) / 2;
         // y = mx + b => y = (innerHeight/innerWidth) x + b
+        // greenX follows the behavior of y
         let greenX = ((innerWidth/innerHeight) * y + midX - inputWidth) / 2;
+        // purpleY follows the behavior of x
         let purpleY = ((innerHeight/innerWidth) * x + midY - inputHeight) / 2;
         textShadow.style.textShadow = `
         ${pinkX}px ${pinkY}px 0 rgba(249, 59, 211, 0.8),
