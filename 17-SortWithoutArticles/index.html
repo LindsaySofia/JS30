@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sort Without Articles</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        /* Photo by Priscilla Fong on Unsplash */
+        background-image: url('bg.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    </style>
+    <ul class="bands"></ul>
+  </head>
+  <body>
+    <script>
+      const ul = document.querySelector('ul');
+      const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive','Anywhere But Here', 'An Old Dog'];
+      const articles = /^(The|An|A)\s+/;
+
+      // Compares the bands without articles.
+      function compareFunction(bandA, bandB) {
+        let newBandA = bandA.replace(articles, '');
+        let newBandB = bandB.replace(articles, '');
+        return (newBandA < newBandB) ? -1 : (newBandA > newBandB) ? 1 : 0;
+      }
+
+      bands.sort(compareFunction);
+      bands.map(band => {
+        let li = document.createElement('li');
+        let textNode = document.createTextNode(band);
+        li.appendChild(textNode);
+        ul.appendChild(li);
+      });
+    </script>
+  </body>
+</html>
