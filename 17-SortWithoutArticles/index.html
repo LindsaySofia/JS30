@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Sort Without Articles</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <style>
       body {
         width: 100vw;
@@ -12,6 +13,22 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      ul {
+        background-color: rgba(255, 255, 255, 0.8);
+        list-style: inside;
+        box-shadow: 0 0 50px 5px black;
+      }
+
+      li {
+        font-family: 'Pacifico', cursive;
+        font-size: 32px;
+        color:rgb(10, 40, 89);
+        padding-right: 10px;
       }
     </style>
     <ul class="bands"></ul>
@@ -30,6 +47,7 @@
       }
 
       bands.sort(compareFunction);
+      console.log(bands);
       bands.map(band => {
         let li = document.createElement('li');
         let textNode = document.createTextNode(band);
