@@ -184,6 +184,9 @@
 <script>
   const videos = document.querySelectorAll('li');
   let times = [];
+  /*
+  Could have used Array.from() or [...] 
+  */
   videos.forEach(video => times.push(video.dataset.time));
   /* 
   time1 & time2 look like "hour:minutes:seconds"
