@@ -182,6 +182,28 @@
     </li>
   </ul>
 <script>
+  const videos = document.querySelectorAll('li');
+  let times = [];
+  videos.forEach(video => times.push(video.dataset.time));
+  /* 
+  time1 & time2 look like "hour:minutes:seconds"
+  returns "hours minutes seconds"
+  */
+  function addTime(time1, time2) {
+    let time1Array = time1.split(':');
+    let time2Array = time2.split(':');
+    let addedSeconds = Number(time1Array[2]) + Number(time2Array[2]);
+    let seconds = addedSeconds % 60;
+    let addedMinutes = Math.floor(addedSeconds / 60) + Number(time1Array[1]) + Number(time2Array[1]);
+    let minutes = addedMinutes % 60;
+    let addedHours = Math.floor(addedMinutes / 60) + Number(time1Array[0]) + Number(time2Array[0]);
+    return `${addedHours}:${minutes}:${seconds}`;
+  }
+  
+  console.log(times.reduce((acc, curr) => {
+    return addTime(acc, '0:' + curr);
+  }, '0:0:0').split(':').join(' '));
+
 </script>
 </body>
 </html>
